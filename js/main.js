@@ -236,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Inputs
             const nameVal = document.getElementById('clientName').value.trim();
             const phoneVal = document.getElementById('clientPhone').value.trim();
-            const emailVal = document.getElementById('clientEmail').value.trim();
             const projectVal = document.getElementById('projectType').value;
             const budgetVal = document.getElementById('budgetRange').value;
 
@@ -276,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Date": new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
                         "Name": nameVal,
                         "Phone": phoneVal,
-                        "Email": emailVal || 'N/A',
+                        "Email": 'N/A',
                         "ProjectType": projectVal,
                         "Budget": budgetVal,
                         "Message": document.getElementById('clientMessage').value.trim() || 'N/A'
@@ -324,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch(error => {
                     console.error('SheetDB Submit Error:', error);
-                    feedback.textContent = 'Oops! We could not save your booking online. Please call us directly at 8050044844 / 9739840744.';
+                    feedback.textContent = 'Oops! We could not save your booking online. Please call us directly at 8050044844 / 8618700640 / 9739840744.';
                     feedback.className = 'form-feedback error';
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnContent;
@@ -359,5 +358,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach(section => observer.observe(section));
+
+    // --- 10. Rotating Phone Numbers in Header ---
+    const phoneNumbers = [
+        { display: '80500 44844', value: '+918050044844' },
+        { display: '86187 00640', value: '+918618700640' },
+        { display: '97398 40744', value: '+919739840744' }
+    ];
+    let activePhoneIndex = 0;
+    const headerPhoneRotator = document.getElementById('headerPhoneRotator');
+    
+    if (headerPhoneRotator) {
+        const textSpan = headerPhoneRotator.querySelector('.phone-number-text');
+        
+        setInterval(() => {
+            headerPhoneRotator.classList.add('fade-out');
+            
+            setTimeout(() => {
+                activePhoneIndex = (activePhoneIndex + 1) % phoneNumbers.length;
+                const nextPhone = phoneNumbers[activePhoneIndex];
+                
+                headerPhoneRotator.setAttribute('href', `tel:${nextPhone.value}`);
+                if (textSpan) {
+                    textSpan.textContent = nextPhone.display;
+                }
+                
+                headerPhoneRotator.classList.remove('fade-out');
+            }, 400); // Wait for fade-out transition to complete
+        }, 4000); // Rotate every 4 seconds
+    }
 
 });

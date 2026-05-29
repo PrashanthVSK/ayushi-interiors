@@ -37,7 +37,8 @@
     <header class="main-header" id="header">
         <div class="header-container">
             <a href="#" class="logo">
-                <span class="logo-accent">A</span>yushi <span class="logo-light">Interiors</span>
+                <img src="assets/logo.png" alt="Ayushi Interiors Logo" class="logo-img">
+                <span class="logo-text">Ayushi <span class="logo-light">Interiors</span></span>
             </a>
             
             <nav class="nav-menu" id="navMenu">
@@ -49,14 +50,17 @@
                 <a href="#testimonials" class="nav-link">Testimonials</a>
                 <div class="nav-contact-mobile">
                     <a href="tel:+918050044844" class="contact-number-mobile"><i data-lucide="phone"></i> 80500 44844</a>
+                    <a href="tel:+918618700640" class="contact-number-mobile"><i data-lucide="phone"></i> 86187 00640</a>
                     <a href="tel:+919739840744" class="contact-number-mobile"><i data-lucide="phone"></i> 97398 40744</a>
                 </div>
             </nav>
 
             <div class="header-right">
                 <div class="header-phones">
-                    <a href="tel:+918050044844" class="phone-link"><i data-lucide="phone"></i> 80500 44844</a>
-                    <a href="tel:+919739840744" class="phone-link"><i data-lucide="phone"></i> 97398 40744</a>
+                    <a href="tel:+918050044844" class="phone-link" id="headerPhoneRotator">
+                        <i data-lucide="phone"></i> 
+                        <span class="phone-number-text">80500 44844</span>
+                    </a>
                 </div>
                 <a href="#contact" class="btn btn-primary btn-nav-cta">Book Consultation</a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
@@ -580,8 +584,8 @@
                             <span class="step-num">01</span>
                             <div class="step-icon"><i data-lucide="users"></i></div>
                         </div>
-                        <h4>Initial Consultation</h4>
-                        <p>We discuss your spatial needs, design preferences, budget expectations, and initial Vastu principles.</p>
+                        <h4>Consultation & Site Visit</h4>
+                        <p>When you call us, we visit your site to understand your space, take measurements, and discuss requirements firsthand.</p>
                     </div>
 
                     <div class="process-step-item">
@@ -748,15 +752,17 @@
                     <div class="contact-info-panel">
                         <span class="section-tag">Let's Connect</span>
                         <h2 class="section-title">Start Your Dream Project Today</h2>
-                        <p class="section-desc">Schedule a free, non-obligatory consultation session with our design specialists. We will discuss layouts, Vastu, materials, and approximate cost estimations.</p>
+                        <p class="section-desc">Schedule a free consultation today. <strong>When you call us, our design experts will visit your site</strong> to understand your space, take precise measurements, and discuss custom design layouts firsthand.</p>
                         
                         <div class="contact-methods">
                             <div class="contact-method-item">
                                 <div class="method-icon"><i data-lucide="phone-call"></i></div>
-                                <div class="method-details">
+                                <div class="method-details phone-details">
                                     <span>Call or WhatsApp</span>
                                     <a href="tel:+918050044844">+91 80500 44844</a>
+                                    <a href="tel:+918618700640">+91 86187 00640</a>
                                     <a href="tel:+919739840744">+91 97398 40744</a>
+                                    <p class="method-hint">✨ Free Site Visit: When you call us, we visit your site!</p>
                                 </div>
                             </div>
 
@@ -801,11 +807,6 @@
                                         <label for="clientPhone">Phone Number *</label>
                                         <input type="tel" id="clientPhone" placeholder="Mobile Number" required>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="clientEmail">Email Address</label>
-                                    <input type="email" id="clientEmail" placeholder="name@domain.com">
                                 </div>
 
                                 <div class="form-row-2">
@@ -858,13 +859,14 @@
                 
                 <div class="footer-brand-col">
                     <a href="#" class="footer-logo">
-                        <span class="logo-accent">A</span>yushi <span class="logo-light">Interiors</span>
+                        <img src="assets/logo.png" alt="Ayushi Interiors Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">Ayushi <span class="logo-light">Interiors</span></span>
                     </a>
                     <p class="footer-brand-desc">Premium interior design and execution services crafting calm, elegant, and space-optimized living environments tailored to you.</p>
                     <div class="footer-socials">
-                        <a href="https://www.facebook.com/profile.php?id=61589986089215" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                        <a href="https://www.instagram.com/ayushi_interiors_aid?igsh=bGpkZWQxeXVxNG8z" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                        <a href="https://pin.it/4mnoKs2Tt" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c5.522 0 10 4.477 10 10 0 4-2.52 7.22-6 7.22-1.17 0-2.28-.61-2.66-1.33l-.73 2.76A9 9 0 0 1 12 22a10 10 0 0 1-5-17.12 8.55 8.55 0 0 1 .58-2.61l1-4.2s-.25-.5-.25-1.24c0-1.17.68-2.04 1.52-2.04.72 0 1.07.54 1.07 1.19 0 .72-.46 1.8-.7 2.8a1.2 1.2 0 0 0 1.22 1.51c1.47 0 2.6-1.55 2.6-3.78 0-1.97-1.42-3.36-3.45-3.36-2.35 0-3.73 1.77-3.73 3.59 0 .71.27 1.48.61 1.89a.22.22 0 0 1 .05.21c-.06.28-.21.89-.24 1-.04.17-.14.21-.33.12C5.07 14.88 4.5 13.06 4.5 11.23c0-3.66 2.66-7.02 7.67-7.02z"></path></svg></a>
+                        <a href="https://www.facebook.com/share/18r6RD4p2u/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                        <a href="https://www.instagram.com/ayushiinteriors?igsh=MWxkeGgycWs2eGpvcA==" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="https://pin.it/nyuQUCZYn" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22c.666-.333 1.2-.8 1.6-1.4l1.6-6.2c.4.2.8.3 1.3.3a5.5 5.5 0 0 0 5.5-5.5A5.5 5.5 0 0 0 12.5 3.7c-.5 0-1 .05-1.5.15a5.5 5.5 0 0 0-5.5 5.5c0 1.2.4 2.3 1.1 3.2.1.1.2.2.1.3l-.6 2.3c-.1.3-.4.5-.7.5-.1 0-.2 0-.3-.1a8.5 8.5 0 0 1-3.6-7c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5c0 3.7-2.4 6.8-5.8 7.8-.5.1-1-.1-1.2-.6-.1-.2-.1-.5 0-.7l1.5-5.8a3.5 3.5 0 0 0 .1-1.2A3.5 3.5 0 0 0 12.5 6a3.5 3.5 0 0 0-3.5 3.5c0 .6.1 1.2.4 1.7.1.2.1.5-.1.7l-.6 2.3a1 1 0 0 1-1.3.7Z"></path></svg></a>
                         <a href="https://www.youtube.com/@ayusshiinteriors5232" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
                     </div>
                 </div>
@@ -896,6 +898,7 @@
                 <div class="footer-contact-col">
                     <h4>Get in Touch</h4>
                     <p class="footer-contact-line"><i data-lucide="phone"></i> <a href="tel:+918050044844">+91 80500 44844</a></p>
+                    <p class="footer-contact-line"><i data-lucide="phone"></i> <a href="tel:+918618700640">+91 86187 00640</a></p>
                     <p class="footer-contact-line"><i data-lucide="phone"></i> <a href="tel:+919739840744">+91 97398 40744</a></p>
                     <p class="footer-contact-line"><i data-lucide="mail"></i> <a href="mailto:ayushiinteriors6@gmail.com">ayushiinteriors6@gmail.com</a></p>
                     <p class="footer-contact-line"><i data-lucide="map-pin"></i> <a href="https://maps.app.goo.gl/GskMETez4dq6YpB96" target="_blank" rel="noopener">16, Vittasandra Main Rd, Vittasandra, Bengaluru, Karnataka 560100</a></p>
@@ -927,6 +930,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Floating Call Button -->
+    <a href="tel:+918050044844" class="floating-call-btn" aria-label="Call Us Now">
+        <i data-lucide="phone"></i>
+        <span>Call Now</span>
+    </a>
 
     <!-- Main JS file -->
     <script src="js/main.js"></script>

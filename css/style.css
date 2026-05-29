@@ -209,15 +209,29 @@ p {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 55px; /* Adjust height to fit nicely in 80px header */
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+}
+
+.main-header.scrolled .logo-img {
+    height: 48px; /* Slightly smaller when scrolled */
+}
+
+.logo-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-text-dark);
     letter-spacing: -0.02em;
-}
-
-.logo-accent {
-    color: var(--color-accent-gold);
+    line-height: 1;
 }
 
 .logo-light {
@@ -273,29 +287,46 @@ p {
 
 .header-phones {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .phone-link {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--color-text-dark);
+    background: rgba(184, 156, 114, 0.08);
+    padding: 7px 14px;
+    border-radius: var(--border-radius-full);
+    border: 1px solid rgba(184, 156, 114, 0.15);
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: var(--transition-fast);
+    transition: opacity 0.4s ease, transform 0.4s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    opacity: 1;
+}
+
+.phone-link.fade-out {
+    opacity: 0;
+    transform: translateY(-3px);
 }
 
 .phone-link i {
     width: 12px;
     height: 12px;
     stroke-width: 2.5;
-    color: var(--color-accent-gold);
+    color: var(--color-accent-gold-hover);
 }
 
 .phone-link:hover {
-    color: var(--color-accent-gold);
+    background: var(--color-accent-gold);
+    color: var(--color-bg-primary);
+    border-color: var(--color-accent-gold);
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 10px rgba(184, 156, 114, 0.2);
+}
+
+.phone-link:hover i {
+    color: var(--color-bg-primary);
 }
 
 .btn-nav-cta {
@@ -1216,12 +1247,32 @@ p {
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Invert logo to white/light for dark footer */
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.footer-logo-img:hover {
+    opacity: 1;
+}
+
+.footer-logo-text {
     font-family: var(--font-heading);
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--color-bg-primary);
-    display: inline-block;
-    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1;
 }
 
 .footer-brand-desc {
@@ -1556,14 +1607,31 @@ p {
     }
     
     .contact-number-mobile {
-        font-weight: 500;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--color-bg-primary);
+        background-color: var(--color-accent-gold);
+        padding: 10px 20px;
+        border-radius: var(--border-radius-full);
         display: flex;
         align-items: center;
         gap: 8px;
+        width: 80%;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(184, 156, 114, 0.2);
+        transition: var(--transition-smooth);
     }
     
     .contact-number-mobile i {
-        color: var(--color-accent-gold);
+        color: var(--color-bg-primary);
+        width: 16px;
+        height: 16px;
+        stroke-width: 2.5;
+    }
+    
+    .contact-number-mobile:active {
+        background-color: var(--color-accent-gold-hover);
+        transform: scale(0.98);
     }
     
     /* Hamburger Active animation */
@@ -1608,5 +1676,90 @@ p {
     .footer-container {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+}
+
+/* --- Highlighting & Interactive Call Enhancements --- */
+
+.phone-details a {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: var(--color-accent-gold-hover) !important;
+    display: inline-block;
+    background: rgba(184, 156, 114, 0.08);
+    padding: 6px 14px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(184, 156, 114, 0.2);
+    margin-top: 8px;
+    margin-right: 12px;
+    transition: var(--transition-smooth);
+}
+
+.phone-details a:hover {
+    background: var(--color-accent-gold);
+    color: var(--color-bg-primary) !important;
+    border-color: var(--color-accent-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 156, 114, 0.2);
+}
+
+.method-hint {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent-gold-hover);
+    margin-top: 10px;
+    display: block;
+}
+
+/* --- Floating Call Button --- */
+.floating-call-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-primary);
+    padding: 14px 22px;
+    border-radius: var(--border-radius-full);
+    box-shadow: 0 8px 24px rgba(184, 156, 114, 0.35);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(250, 248, 245, 0.2);
+}
+
+.floating-call-btn i {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+    animation: phone-shake 2.5s infinite;
+}
+
+.floating-call-btn:hover {
+    background-color: var(--color-text-dark);
+    color: var(--color-bg-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(34, 32, 30, 0.25);
+}
+
+@keyframes phone-shake {
+    0%, 100% { transform: rotate(0); }
+    5%, 15%, 25%, 35%, 45% { transform: rotate(-10deg); }
+    10%, 20%, 30%, 40% { transform: rotate(10deg); }
+    50% { transform: rotate(0); }
+}
+
+@media (max-width: 768px) {
+    .floating-call-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
+        font-size: 0.85rem;
     }
 }
